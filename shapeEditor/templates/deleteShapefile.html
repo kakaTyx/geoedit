@@ -1,0 +1,22 @@
+{% load humanize %}
+<html>
+    <head>
+        <title>ShapeEditor</title>
+    </head>
+    <body>
+        <h1>Delete Shapefile</h1>
+        <form method="POST">
+            Are you sure you want to delete the "{{ shapefile.filename }}"
+            shapefile?
+            <br/>
+           This shapefile contains {{ shapefile.feature_set.count|intcomma }}
+           features and {{ shapefile.attribute_set.count|intcomma }}
+           attributes.
+            <p/>
+            <button type="submit" name="confirm" value="1">Delete</button>
+            &nbsp;
+            <button type="submit" name="confirm" value="0">Cancel</button>
+        </form>
+    </body>
+</html>
+
